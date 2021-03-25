@@ -1,0 +1,107 @@
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+  background-color: black;
+  color: white; 
+}
+
+h1 {
+  font-style: italic;
+  text-decoration: underline; /* https://www.w3schools.com/cssref/pr_text_text-decoration.asp*/
+  font-family: verdana, arial, sans-serif; 
+  color: #00000;
+}
+
+button {
+  padding: 15px;
+  border-radius: 15px;
+}
+
+#noteSection {
+  height: 80px;
+}
+
+#timeLimit {
+  height: 80px;
+  
+}
+
+#gameButtonArea > button {
+  width:200px;
+  height:200px;
+  margin:2px;
+}
+
+.hidden {
+  display: none;
+}
+
+#btn1 {
+  background: lightgreen;
+}
+
+#btn1:active, #btn1.lit {
+  background:green;
+}
+
+#btn2 {
+  background: lightblue;
+}
+
+#btn2:active, #btn2.lit {
+  background: blue;
+}
+
+#btn3 {
+  background: pink;
+}
+
+#btn3:active, #btn3.lit {
+  background: red;
+}
+
+#btn4 {
+  background: lightyellow;
+}
+
+#btn4:active, #btn4.lit {
+  background: yellow;
+}
+
+#btn5 {
+  background: mediumorchid;
+}
+
+#btn5:active, #btn5.lit {
+  background: purple
+}
+
+#btn6 {
+  background: sandybrown;
+}
+
+#btn6:active, #btn6.lit {
+  background: saddlebrown;
+}
+
+#btn7 {
+  background: snow;
+}
+
+#btn7:active, #btn7.lit {
+  background: lightslategray;
+}
+
+#btn8 {
+  background: grey;
+}
+#btn8:active, #btn8.lit {
+  background: black;
+}
+#textInput {
+  height: 15px;
+  position: absolute;
+  background-color: #ddd;
+}
