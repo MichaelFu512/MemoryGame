@@ -1,0 +1,94 @@
+# Pre-work - *Memory Game*
+
+**Memory Game** is a Light & Sound Memory game to apply for CodePath's SITE Program. 
+
+Submitted by: Michael Fu
+
+Time spent: 7 hours spent in total
+
+Link to project: https://daily-caring-mouth.glitch.me
+
+## Required Functionality
+
+The following **required** functionality is complete (I'm assuming that I check mark these?):
+
+* [X] Game interface has a heading (h1 tag), a line of body text (p tag), and four buttons that match the demo app
+* [X] "Start" button toggles between "Start" and "Stop" when clicked. 
+* [X] Game buttons each light up and play a sound when clicked. 
+* [X] Computer plays back sequence of clues including sound and visual cue for each button
+* [X] Play progresses to the next turn (the user gets the next step in the pattern) after a correct guess. 
+* [X] User wins the game after guessing a complete pattern
+* [X] User loses the game after an incorrect guess
+
+The following **optional** features are implemented (I'm assuming that I check mark these?):
+
+* [X] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
+* [X] Buttons use a pitch (frequency) other than the ones in the tutorial
+* [X] More than 4 functional game buttons
+* [X] Playback speeds up on each turn
+* [X] Computer picks a different pattern each time the game is played
+* [X] Player only loses after 3 mistakes (instead of on the first mistake)
+* [ ] Game button appearance change goes beyond color (e.g. add an image)
+* [ ] Game button sound is more complex than a single tone (e.g. an audio file, a chord, a sequence of multiple tones)
+* [X] User has a limited amount of time to enter their guess on each turn
+
+The following **additional** features are implemented:
+
+- [X] List anything else that you can get done to improve the app!
+    - Users can choose how many clues/notes are in the pattern
+    - Users can choose how many seconds they have to guess
+
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+![]https://recordit.co/AusPGFyLD0
+
+
+## Reflection Questions
+1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
+ -Stack Overflow
+ -developer.mozilla.org
+ -w3schools.com
+
+2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
+- One of the biggest challenges in creating this submission was getting the timer to actually work. What would happen is that the timer would often fail to reset at all, whether it be failing to reset after the stop button was pressed
+  to the timer going into the negatives even with a conditional statement to stop the count before it reached it. There was even a bug where it seemed like there were multiple timers ticking down at the same time with different
+  start numbers, evident by how the timer number kept jumping to vastly different numbers (e.g: jumping from 26, to 14, to 18, to 25). All these bugs led to me having to look up and learn what I was writing in Javascript, such as
+  the ideas of global variables and using the setTimeout function. It became apparent to me that the solution for some of the bugs I was running into could be solved by declaring the variable that I was using for the 
+  setInterval to be global, thus granting other methods outside of the method where I call setInterval the ability to close the interval and reset the count. The multiple timer bug arose from my improper usage of
+  setInterval, where I had put that part of the code in the "guess" function; the guess function is called multiple times and thus, this lead to multiple different timers counting down at the same time. I had put the countdown in
+  the guess function because I didn't know how to start the countdown after the playClueSequence() function finished. In order to properly time the countdown to start ticking down after the end of the playClueSequence() function,
+  I learned how to use the setTimeout function, which allowed me to start the countdown as soon as all the clues played out, while also moving the timer code to the end of playClueSequence().
+  By putting the code where I call setInterval to the end of the playClueSequence() function and having the count reset at the beginning of playClueSequence(), I guaranteed that there would only be one counter going off. I also 
+  added a stop mechanism and reset to the stopGame() function, allowing the timer to properly stop and reset if one was to hit the stop button, which also coincidently fixed the negative number issue.
+  Getting the timer to work was a challenging, yet rewarding experience.
+
+3. What questions about web development do you have after completing your submission? (recommended 100 - 300 words) 
+- One of the questions I do have about web development, particularly about Javascript, is what is a "promise" because as I looked up how to perform certain tasks on the internet, a lot of times there would be mention 
+  of promises when I looked at javascript topics. Another question would be how best to format and align the page you are making to look better to potential users, and how to manipulate web elements to go where you want 
+  them to go (for example: how do I make a <div> element be right next to another <div> element). Lastly, I want to learn how to make dynamic objects on the screen, such as making a moving progress bar or lighting up
+  the area where the mouse clicks.
+
+4. If you had a few more hours to work on this project, what would you spend them doing (for example: refactoring certain functions, adding additional features, etc). Be specific. (recommended 100 - 300 words) 
+- If I had a few more hours, I would want to add different audio and art to the buttons because it got old hearing the same old one tone sounds and seeing the same colors over and over again during testing.
+  I would also find a way to move my sliders to be next to each other, because I do not like how they look stacked on top of each other. Another thing I would add would be another slider for the user to choose the number
+  of buttons that they want to have in the pattern, so they could either limit the number of buttons to x amount or increase the number of buttons to y amount. I also really want to make the timer more dynamic looking, 
+  such as making it look like a clock or a progress bar. Lastly, I would want to give users the option to type into the boxes next to the sliders so that they don't have to use the sliders if they don't want to.
+  
+
+
+## License
+
+    Copyright Michael Fu
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
